@@ -1,0 +1,227 @@
+<!DOCTYPE html><html><head>
+    <meta charset="utf-8">
+    <title>Orange Report</title>
+
+    <style>
+    html, body, table {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 13px;
+        margin:0px;
+        padding:0;
+        border:0 none;
+    }
+
+    h1, h2 , h3, h4, h5 {
+       padding: 1px;
+       font-size:100%;
+    }
+
+    h1 {
+        color: white;
+        background-color: black;
+        padding: 4px;
+        margin-top: 12px;
+        margin-bottom: 6px;
+    }
+
+    h2 {
+        border-bottom: 1px solid black;
+        padding-left: 2px;
+    }
+
+    ul, table, p {
+        padding: 10px;
+    }
+
+    table {
+        margin-left: -6px;
+    }
+
+    span.timestamp {
+        position: absolute;
+        right: 40px;
+        color:#ddd;
+    }
+
+    div.selected, div.normal {
+        margin: 5px;
+    }
+
+    div.selected {
+        background: #ddd;
+    }
+    @media print{
+        div.selected {
+            background: inherit;
+        }
+        ::-webkit-input-placeholder {
+            color: transparent;
+        }
+    }
+
+    div.content {
+        margin-left: 15px;
+    }
+
+    th, td {
+        text-align: left;
+        padding: 2px 6px 2px 6px;
+    }
+
+    th {
+        font-weight: bold;
+    }
+
+    @media screen {
+        td, th {
+            white-space: nowrap;
+        }
+    }
+
+    .caption {
+        text-align: center;
+        font-size: 90%;
+    }
+
+    img {
+        display: block;
+        margin: auto;
+        max-height: 20cm;
+    }
+
+    span.legend-square {
+        width: 1em;
+        height: 1em;
+        margin-right: 6px;
+        display: inline-block;
+    }
+
+    span.legend-item {
+        margin-right: 24px;
+    }
+
+    textarea {
+        border: 1px solid silver;
+        font-style: italic;
+        width: 100%;
+        height: 4em;
+    }
+
+    .textwrapper {
+        padding: 15px;
+    }
+
+    div.normal textarea:invalid {
+        display: none;
+    }
+
+    div.selected textarea {
+        display: block;
+    }
+
+    @media print{
+        section.section, img {
+            page-break-inside: avoid;
+        }
+    }
+    </style>
+    <script>
+    function scrollToId(id) {
+        var sel_el = document.getElementById(id);
+        if (sel_el != undefined) {
+            sel_el.scrollIntoView();
+            return true;
+        }
+        return false;
+    };
+
+    function setSelectedId(id) {
+        var sel_el = document.getElementsByClassName('selected')[0];
+        if (sel_el != undefined && sel_el.id != id) {
+           sel_el.className = 'normal';
+        }
+        sel_el = document.getElementById(id);
+        if (sel_el != undefined) {
+            sel_el.className = 'selected';
+            return true;
+        }
+        return false;
+    };
+    </script>
+
+</head><body>
+
+ 
+
+<div id="5237355136" class="selected" onclick="pybridge._select_item(this.id)"><section class="section"><h1>Select Columns <span class="timestamp">Thu Apr 18 24, 11:38:32</span></h1><div class="content">
+<h2>Input data</h2><ul><b>Features:</b> Clump Thickness, Uniformity of Cell Size, Uniformity of Cell Shape, Marginal Adhesion, Single Epithelial Cell Size, Bare Nuclei, Bland Chromatin, Normal Nucleoli, Mitoses<br><b>Target:</b> Class<br></ul><h2>Output data</h2><ul><b>Features:</b> Uniformity of Cell Size<br><b>Target:</b> Class<br></ul><ul><b>Removed:</b> 8 (Uniformity of Cell Shape, Mitoses, Marginal Adhesion, Single Epithelial Cell Size, Bland Chromatin, Clump Thickness, Bare Nuclei, Normal Nucleoli)<br></ul></div></section>
+
+<div class="textwrapper"><textarea placeholder="Write a comment..." oninput="this.innerHTML = this.value;pybridge._add_comment(this.parentNode.parentNode.id, this.value);">Part3 Q19 select 1st feature</textarea></div></div><div id="5237371664" class="normal" onclick="pybridge._select_item(this.id)"><section class="section"><h1>Test and Score <span class="timestamp">Thu Apr 18 24, 11:38:35</span></h1><div class="content">
+<h2>Settings</h2><ul><b>Sampling type:</b> No sampling, test on testing data<br><b>Target class:</b> None, show average over classes<br></ul><h2>Scores</h2><table>
+<tbody><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Model</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">AUC</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">CA</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">F1</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Prec</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Recall</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Spec</th>
+</tr><tr><td style="color:black; background:transparent; text-align:left; vertical-align:middle;">Logistic Regression</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.963</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.933</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.931</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.935</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.933</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.868</td>
+</tr></tbody></table></div></section>
+
+<div class="textwrapper"><textarea placeholder="Write a comment..." oninput="this.innerHTML = this.value;pybridge._add_comment(this.parentNode.parentNode.id, this.value);">Part3 Q19 select 1st feature
+CA for Uniformity of Cell Size: 0.933
+CA for Uniformity of Cell Shape: 0.914
+CA for Mitoses: 0.789
+I selected uniform cell size as the feature because the classification is performing very well with high scores across multiple metrics. AUC indicates excellently discrimination between classes. CA means that 93.3% of the instances are correctly classified. The F1, Precision, Recall and Specificity score further demonstrating the robustness of the model's performance.</textarea></div></div><div id="5237458112" class="normal" onclick="pybridge._select_item(this.id)"><section class="section"><h1>Select Columns <span class="timestamp">Thu Apr 18 24, 11:41:22</span></h1><div class="content">
+<h2>Input data</h2><ul><b>Features:</b> Clump Thickness, Uniformity of Cell Size, Uniformity of Cell Shape, Marginal Adhesion, Single Epithelial Cell Size, Bare Nuclei, Bland Chromatin, Normal Nucleoli, Mitoses<br><b>Target:</b> Class<br></ul><h2>Output data</h2><ul><b>Features:</b> Uniformity of Cell Size, Uniformity of Cell Shape<br><b>Target:</b> Class<br></ul><ul><b>Removed:</b> 7 (Mitoses, Marginal Adhesion, Single Epithelial Cell Size, Bland Chromatin, Clump Thickness, Bare Nuclei, Normal Nucleoli)<br></ul></div></section>
+
+<div class="textwrapper"><textarea placeholder="Write a comment..." oninput="this.innerHTML = this.value;pybridge._add_comment(this.parentNode.parentNode.id, this.value);">Part3 Q20 select 2nd feature</textarea></div></div><div id="5237492320" class="normal" onclick="pybridge._select_item(this.id)"><section class="section"><h1>Test and Score <span class="timestamp">Thu Apr 18 24, 11:41:25</span></h1><div class="content">
+<h2>Settings</h2><ul><b>Sampling type:</b> No sampling, test on testing data<br><b>Target class:</b> None, show average over classes<br></ul><h2>Scores</h2><table>
+<tbody><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Model</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">AUC</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">CA</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">F1</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Prec</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Recall</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Spec</th>
+</tr><tr><td style="color:black; background:transparent; text-align:left; vertical-align:middle;">Logistic Regression</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.987</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.947</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.947</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.948</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.947</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.936</td>
+</tr></tbody></table></div></section>
+
+<div class="textwrapper"><textarea placeholder="Write a comment..." oninput="this.innerHTML = this.value;pybridge._add_comment(this.parentNode.parentNode.id, this.value);">Part3 Q20 select 2nd feature
+CA for uniform cell size+uniform cell shape: 0.947
+CA for uniform cell size+mitoses: 0.923
+The performance of uniform cell size and uniform cell shape is better than adding the mitoses to the previous model. The original CA for uniform cell size alone is 0.933, and the score got deducted by adding mitoses to the feature. By contrast, selecting uniform cell shape as the additional feature increased the score.</textarea></div></div><div id="5237460416" class="normal" onclick="pybridge._select_item(this.id)"><section class="section"><h1>Select Columns <span class="timestamp">Thu Apr 18 24, 11:46:38</span></h1><div class="content">
+<h2>Input data</h2><ul><b>Features:</b> Clump Thickness, Uniformity of Cell Size, Uniformity of Cell Shape, Marginal Adhesion, Single Epithelial Cell Size, Bare Nuclei, Bland Chromatin, Normal Nucleoli, Mitoses<br><b>Target:</b> Class<br></ul><h2>Output data</h2><ul><b>Features:</b> Uniformity of Cell Size, Uniformity of Cell Shape, Mitoses<br><b>Target:</b> Class<br></ul><ul><b>Removed:</b> 6 (Marginal Adhesion, Single Epithelial Cell Size, Bland Chromatin, Clump Thickness, Bare Nuclei, Normal Nucleoli)<br></ul></div></section>
+
+<div class="textwrapper"><textarea placeholder="Write a comment..." oninput="this.innerHTML = this.value;pybridge._add_comment(this.parentNode.parentNode.id, this.value);">Part3 Q21 use the 3rd feature</textarea></div></div><div id="5951228512" class="normal" onclick="pybridge._select_item(this.id)"><section class="section"><h1>Test and Score <span class="timestamp">Thu Apr 18 24, 11:46:41</span></h1><div class="content">
+<h2>Settings</h2><ul><b>Sampling type:</b> No sampling, test on testing data<br><b>Target class:</b> None, show average over classes<br></ul><h2>Scores</h2><table>
+<tbody><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Model</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">AUC</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">CA</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">F1</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Prec</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Recall</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Spec</th>
+</tr><tr><td style="color:black; background:transparent; text-align:left; vertical-align:middle;">Logistic Regression</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.979</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.938</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.937</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.939</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.938</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.901</td>
+</tr></tbody></table></div></section>
+
+<div class="textwrapper"><textarea placeholder="Write a comment..." oninput="this.innerHTML = this.value;pybridge._add_comment(this.parentNode.parentNode.id, this.value);">Part3 Q21 use the 3rd feature
+The CA score slightly decreased by adding mitoses to the feature along with cell size and cell shape. Therefore, adding mitoses as the third feature does not provide additional discriminatory power and is necessary for the model's performance.</textarea></div></div></body></html>

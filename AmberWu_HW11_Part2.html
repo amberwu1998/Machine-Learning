@@ -1,0 +1,376 @@
+<!DOCTYPE html><html><head>
+    <meta charset="utf-8">
+    <title>Orange Report</title>
+
+    <style>
+    html, body, table {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 13px;
+        margin:0px;
+        padding:0;
+        border:0 none;
+    }
+
+    h1, h2 , h3, h4, h5 {
+       padding: 1px;
+       font-size:100%;
+    }
+
+    h1 {
+        color: white;
+        background-color: black;
+        padding: 4px;
+        margin-top: 12px;
+        margin-bottom: 6px;
+    }
+
+    h2 {
+        border-bottom: 1px solid black;
+        padding-left: 2px;
+    }
+
+    ul, table, p {
+        padding: 10px;
+    }
+
+    table {
+        margin-left: -6px;
+    }
+
+    span.timestamp {
+        position: absolute;
+        right: 40px;
+        color:#ddd;
+    }
+
+    div.selected, div.normal {
+        margin: 5px;
+    }
+
+    div.selected {
+        background: #ddd;
+    }
+    @media print{
+        div.selected {
+            background: inherit;
+        }
+        ::-webkit-input-placeholder {
+            color: transparent;
+        }
+    }
+
+    div.content {
+        margin-left: 15px;
+    }
+
+    th, td {
+        text-align: left;
+        padding: 2px 6px 2px 6px;
+    }
+
+    th {
+        font-weight: bold;
+    }
+
+    @media screen {
+        td, th {
+            white-space: nowrap;
+        }
+    }
+
+    .caption {
+        text-align: center;
+        font-size: 90%;
+    }
+
+    img {
+        display: block;
+        margin: auto;
+        max-height: 20cm;
+    }
+
+    span.legend-square {
+        width: 1em;
+        height: 1em;
+        margin-right: 6px;
+        display: inline-block;
+    }
+
+    span.legend-item {
+        margin-right: 24px;
+    }
+
+    textarea {
+        border: 1px solid silver;
+        font-style: italic;
+        width: 100%;
+        height: 4em;
+    }
+
+    .textwrapper {
+        padding: 15px;
+    }
+
+    div.normal textarea:invalid {
+        display: none;
+    }
+
+    div.selected textarea {
+        display: block;
+    }
+
+    @media print{
+        section.section, img {
+            page-break-inside: avoid;
+        }
+    }
+    </style>
+    <script>
+    function scrollToId(id) {
+        var sel_el = document.getElementById(id);
+        if (sel_el != undefined) {
+            sel_el.scrollIntoView();
+            return true;
+        }
+        return false;
+    };
+
+    function setSelectedId(id) {
+        var sel_el = document.getElementsByClassName('selected')[0];
+        if (sel_el != undefined && sel_el.id != id) {
+           sel_el.className = 'normal';
+        }
+        sel_el = document.getElementById(id);
+        if (sel_el != undefined) {
+            sel_el.className = 'selected';
+            return true;
+        }
+        return false;
+    };
+    </script>
+
+</head><body>
+
+ 
+
+<div id="5959814160" class="normal" onclick="pybridge._select_item(this.id)"><section class="section"><h1>Data Table <span class="timestamp">Thu Apr 18 24, 12:16:24</span></h1><div class="content">
+<ul><b>Data instances:</b> 10<br><b>Features:</b> 1<br><b>Meta attributes:</b> 1<br></ul><table>
+<tbody><tr><th></th><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">name</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">4</th>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">1</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">intercept</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-1.11983</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">2</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Clump Thickness</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">1.19138</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">3</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Uniformity of Cell Size</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.228836</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">4</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Uniformity of Cell Shape</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.88077</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">5</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Marginal Adhesion</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.438216</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">6</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Single Epithelial Cell Size</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.0164394</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">7</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Bare Nuclei</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">1.51468</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">8</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Bland Chromatin</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.914526</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">9</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Normal Nucleoli</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.759684</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">10</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Mitoses</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.278671</td>
+</tr></tbody></table></div></section>
+
+<div class="textwrapper"><textarea placeholder="Write a comment..." oninput="this.innerHTML = this.value;pybridge._add_comment(this.parentNode.parentNode.id, this.value);">Part2 Q8 Regularization C=1</textarea></div></div><div id="5959811424" class="normal" onclick="pybridge._select_item(this.id)"><section class="section"><h1>Test and Score <span class="timestamp">Thu Apr 18 24, 12:16:26</span></h1><div class="content">
+<h2>Settings</h2><ul><b>Sampling type:</b> No sampling, test on testing data<br><b>Target class:</b> None, show average over classes<br></ul><h2>Scores</h2><table>
+<tbody><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Model</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">AUC</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">CA</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">F1</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Prec</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Recall</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Spec</th>
+</tr><tr><td style="color:black; background:transparent; text-align:left; vertical-align:middle;">Logistic Regression</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.998</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.971</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.970</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.971</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.971</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.959</td>
+</tr></tbody></table></div></section>
+
+<div class="textwrapper"><textarea placeholder="Write a comment..." oninput="this.innerHTML = this.value;pybridge._add_comment(this.parentNode.parentNode.id, this.value);">Part2 Q8 Regularization C=1
+I set C=1. The classification is doing a good job by looking at the scores. All of the scores are above 0.9 which implies the the performance of the model is very robust. The L1 regularization is performing feature selection in this case because all features have non-zero coefficients. </textarea></div></div><div id="5959789584" class="normal" onclick="pybridge._select_item(this.id)"><section class="section"><h1>Data Table <span class="timestamp">Thu Apr 18 24, 12:24:01</span></h1><div class="content">
+<ul><b>Data instances:</b> 10<br><b>Features:</b> 1<br><b>Meta attributes:</b> 1<br></ul><table>
+<tbody><tr><th></th><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">name</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">4</th>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">1</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">intercept</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">-0.720664</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">2</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Clump Thickness</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.736093</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">3</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Uniformity of Cell Size</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.510759</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">4</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Uniformity of Cell Shape</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.653429</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">5</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Marginal Adhesion</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.218967</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">6</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Single Epithelial Cell Size</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.0147415</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">7</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Bare Nuclei</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">1.26153</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">8</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Bland Chromatin</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.557937</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">9</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Normal Nucleoli</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.527702</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">10</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Mitoses</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.00721921</td>
+</tr></tbody></table></div></section>
+
+<div class="textwrapper"><textarea placeholder="Write a comment..." oninput="this.innerHTML = this.value;pybridge._add_comment(this.parentNode.parentNode.id, this.value);">Part2 Q9 Reduce C to have no qualitative effect</textarea></div></div><div id="5959855120" class="normal" onclick="pybridge._select_item(this.id)"><section class="section"><h1>Test and Score <span class="timestamp">Thu Apr 18 24, 12:24:03</span></h1><div class="content">
+<h2>Settings</h2><ul><b>Sampling type:</b> No sampling, test on testing data<br><b>Target class:</b> None, show average over classes<br></ul><h2>Scores</h2><table>
+<tbody><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Model</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">AUC</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">CA</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">F1</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Prec</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Recall</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Spec</th>
+</tr><tr><td style="color:black; background:transparent; text-align:left; vertical-align:middle;">Logistic Regression</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.997</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.961</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.961</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.961</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.961</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.941</td>
+</tr></tbody></table></div></section>
+
+<div class="textwrapper"><textarea placeholder="Write a comment..." oninput="this.innerHTML = this.value;pybridge._add_comment(this.parentNode.parentNode.id, this.value);">Part2 Q9 Reduce C to have no qualitative effect
+I set C=0.15. No feature is ignored in this case, but if I decrease C further to 0.14, 1 feature would be ignored because f10 becomes 0. The performance gets a little worse than before, but it is still a good model overall.</textarea></div></div><div id="5237804048" class="normal" onclick="pybridge._select_item(this.id)"><section class="section"><h1>Data Table <span class="timestamp">Thu Apr 18 24, 12:29:06</span></h1><div class="content">
+<ul><b>Data instances:</b> 10<br><b>Features:</b> 1<br><b>Meta attributes:</b> 1<br></ul><table>
+<tbody><tr><th></th><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">name</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">4</th>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">1</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">intercept</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">2</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Clump Thickness</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">3</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Uniformity of Cell Size</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.458635</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">4</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Uniformity of Cell Shape</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.327988</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">5</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Marginal Adhesion</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">6</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Single Epithelial Cell Size</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">7</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Bare Nuclei</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.688802</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">8</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Bland Chromatin</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.0126668</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">9</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Normal Nucleoli</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">10</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Mitoses</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0</td>
+</tr></tbody></table></div></section>
+
+<div class="textwrapper"><textarea placeholder="Write a comment..." oninput="this.innerHTML = this.value;pybridge._add_comment(this.parentNode.parentNode.id, this.value);">Part2 Q10 Reduce C to have half of features ignored</textarea></div></div><div id="5959878832" class="normal" onclick="pybridge._select_item(this.id)"><section class="section"><h1>Test and Score <span class="timestamp">Thu Apr 18 24, 12:29:07</span></h1><div class="content">
+<h2>Settings</h2><ul><b>Sampling type:</b> No sampling, test on testing data<br><b>Target class:</b> None, show average over classes<br></ul><h2>Scores</h2><table>
+<tbody><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Model</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">AUC</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">CA</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">F1</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Prec</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Recall</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Spec</th>
+</tr><tr><td style="color:black; background:transparent; text-align:left; vertical-align:middle;">Logistic Regression</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.993</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.961</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.961</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.961</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.961</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.947</td>
+</tr></tbody></table></div></section>
+
+<div class="textwrapper"><textarea placeholder="Write a comment..." oninput="this.innerHTML = this.value;pybridge._add_comment(this.parentNode.parentNode.id, this.value);">Part2 Q10 Reduce C to have half of features ignored
+C=0.014 is used. 5/9 features (f2,f5,f6,f9,f10) are ignored because their values are pushed to 0. F1 intercept is not a feature. A zero intercept means that the decision boundary passes through the origin of the coordinate system. The performance of the model did not change much compared to previous settings, which implies that all 5 features that got ignored are not essential.</textarea></div></div><div id="5959879696" class="normal" onclick="pybridge._select_item(this.id)"><section class="section"><h1>Data Table <span class="timestamp">Thu Apr 18 24, 12:32:24</span></h1><div class="content">
+<ul><b>Data instances:</b> 10<br><b>Features:</b> 1<br><b>Meta attributes:</b> 1<br></ul><table>
+<tbody><tr><th></th><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">name</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">4</th>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">1</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">intercept</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">2</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Clump Thickness</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">3</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Uniformity of Cell Size</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.0350068</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">4</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Uniformity of Cell Shape</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.0333962</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">5</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Marginal Adhesion</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">6</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Single Epithelial Cell Size</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">7</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Bare Nuclei</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.140616</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">8</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Bland Chromatin</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">9</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Normal Nucleoli</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">10</th>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Mitoses</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0</td>
+</tr></tbody></table></div></section>
+
+<div class="textwrapper"><textarea placeholder="Write a comment..." oninput="this.innerHTML = this.value;pybridge._add_comment(this.parentNode.parentNode.id, this.value);">Part2 Q11 Reduce C as much as possible while keeping important prediction</textarea></div></div><div id="5215370256" class="normal" onclick="pybridge._select_item(this.id)"><section class="section"><h1>Test and Score <span class="timestamp">Thu Apr 18 24, 12:32:26</span></h1><div class="content">
+<h2>Settings</h2><ul><b>Sampling type:</b> No sampling, test on testing data<br><b>Target class:</b> None, show average over classes<br></ul><h2>Scores</h2><table>
+<tbody><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Model</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">AUC</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">CA</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">F1</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Prec</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Recall</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Spec</th>
+</tr><tr><td style="color:black; background:transparent; text-align:left; vertical-align:middle;">Logistic Regression</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.990</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.936</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.936</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.936</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.936</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.921</td>
+</tr></tbody></table></div></section>
+
+<div class="textwrapper"><textarea placeholder="Write a comment..." oninput="this.innerHTML = this.value;pybridge._add_comment(this.parentNode.parentNode.id, this.value);">Part2 Q11 Reduce C as much as possible while keeping important prediction
+C is set to 0.006 in this case where 3 features still remain. When C is set to 0.005, all features except for f3,f4 and f7 turned 0 and the performance of the prediction immediately got very bad. The metrics scores slightly dropped but model is doing an overall very good job (all above 90%). That is to say, only 3 features (f3,f4,f7) are necessary to classify the samples.</textarea></div></div></body></html>

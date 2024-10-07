@@ -1,0 +1,238 @@
+<!DOCTYPE html><html><head>
+    <meta charset="utf-8">
+    <title>Orange Report</title>
+
+    <style>
+    html, body, table {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 13px;
+        margin:0px;
+        padding:0;
+        border:0 none;
+    }
+
+    h1, h2 , h3, h4, h5 {
+       padding: 1px;
+       font-size:100%;
+    }
+
+    h1 {
+        color: white;
+        background-color: black;
+        padding: 4px;
+        margin-top: 12px;
+        margin-bottom: 6px;
+    }
+
+    h2 {
+        border-bottom: 1px solid black;
+        padding-left: 2px;
+    }
+
+    ul, table, p {
+        padding: 10px;
+    }
+
+    table {
+        margin-left: -6px;
+    }
+
+    span.timestamp {
+        position: absolute;
+        right: 40px;
+        color:#ddd;
+    }
+
+    div.selected, div.normal {
+        margin: 5px;
+    }
+
+    div.selected {
+        background: #ddd;
+    }
+    @media print{
+        div.selected {
+            background: inherit;
+        }
+        ::-webkit-input-placeholder {
+            color: transparent;
+        }
+    }
+
+    div.content {
+        margin-left: 15px;
+    }
+
+    th, td {
+        text-align: left;
+        padding: 2px 6px 2px 6px;
+    }
+
+    th {
+        font-weight: bold;
+    }
+
+    @media screen {
+        td, th {
+            white-space: nowrap;
+        }
+    }
+
+    .caption {
+        text-align: center;
+        font-size: 90%;
+    }
+
+    img {
+        display: block;
+        margin: auto;
+        max-height: 20cm;
+    }
+
+    span.legend-square {
+        width: 1em;
+        height: 1em;
+        margin-right: 6px;
+        display: inline-block;
+    }
+
+    span.legend-item {
+        margin-right: 24px;
+    }
+
+    textarea {
+        border: 1px solid silver;
+        font-style: italic;
+        width: 100%;
+        height: 4em;
+    }
+
+    .textwrapper {
+        padding: 15px;
+    }
+
+    div.normal textarea:invalid {
+        display: none;
+    }
+
+    div.selected textarea {
+        display: block;
+    }
+
+    @media print{
+        section.section, img {
+            page-break-inside: avoid;
+        }
+    }
+    </style>
+    <script>
+    function scrollToId(id) {
+        var sel_el = document.getElementById(id);
+        if (sel_el != undefined) {
+            sel_el.scrollIntoView();
+            return true;
+        }
+        return false;
+    };
+
+    function setSelectedId(id) {
+        var sel_el = document.getElementsByClassName('selected')[0];
+        if (sel_el != undefined && sel_el.id != id) {
+           sel_el.className = 'normal';
+        }
+        sel_el = document.getElementById(id);
+        if (sel_el != undefined) {
+            sel_el.className = 'selected';
+            return true;
+        }
+        return false;
+    };
+    </script>
+
+</head><body>
+
+ 
+
+<div id="5109811808" class="normal" onclick="pybridge._select_item(this.id)"><section class="section"><h1>Confusion Matrix <span class="timestamp">Thu Apr 04 24, 15:57:20</span></h1><div class="content">
+<h2>Confusion matrix for Linear kernel SVM (showing number of instances)</h2><table>
+<tbody><tr><td style="color:black; background:transparent; text-align:left; vertical-align:middle;"></td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;"></td>
+<td style="color:black; background:transparent; text-align:center; vertical-align:middle;">Predicted</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;"></td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;"></td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;"></td>
+</tr><tr><td style="color:black; background:transparent; text-align:left; vertical-align:middle;"></td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;"></td>
+<td style="color:black; background:transparent; font-weight: bold; text-align:right; vertical-align:middle;">0</td>
+<td style="color:black; background:transparent; font-weight: bold; text-align:right; vertical-align:middle;">1</td>
+<td style="color:black; background:transparent; font-weight: bold; text-align:right; vertical-align:middle;">2</td>
+<td style="color:black; background:transparent; font-weight: bold; text-align:right; vertical-align:middle;">∑</td>
+</tr><tr><td style="color:black; background:transparent; text-align:center; vertical-align:bottom;">Actual</td>
+<td style="color:black; background:transparent; font-weight: bold; text-align:right; vertical-align:middle;">0</td>
+<td style="color:#000000; background:#ddddf7; text-align:right; vertical-align:middle;">221</td>
+<td style="color:#000000; background:#f4cece; text-align:right; vertical-align:middle;">279</td>
+<td style="color:#000000; background:transparent; text-align:right; vertical-align:middle;">0</td>
+<td style="color:black; background:transparent; font-weight: bold; text-align:right; vertical-align:middle;">500</td>
+</tr><tr><td style="color:black; background:transparent; text-align:left; vertical-align:middle;"></td>
+<td style="color:black; background:transparent; font-weight: bold; text-align:right; vertical-align:middle;">1</td>
+<td style="color:#000000; background:#f8e0e0; text-align:right; vertical-align:middle;">174</td>
+<td style="color:#000000; background:#cecef4; text-align:right; vertical-align:middle;">326</td>
+<td style="color:#000000; background:transparent; text-align:right; vertical-align:middle;">0</td>
+<td style="color:black; background:transparent; font-weight: bold; text-align:right; vertical-align:middle;">500</td>
+</tr><tr><td style="color:black; background:transparent; text-align:left; vertical-align:middle;"></td>
+<td style="color:black; background:transparent; font-weight: bold; text-align:right; vertical-align:middle;">2</td>
+<td style="color:#000000; background:#fefafa; text-align:right; vertical-align:middle;">25</td>
+<td style="color:#000000; background:transparent; text-align:right; vertical-align:middle;">0</td>
+<td style="color:#000000; background:transparent; text-align:right; vertical-align:middle;">0</td>
+<td style="color:black; background:transparent; font-weight: bold; text-align:right; vertical-align:middle;">25</td>
+</tr><tr><td style="color:black; background:transparent; text-align:left; vertical-align:middle;"></td>
+<td style="color:black; background:transparent; font-weight: bold; text-align:right; vertical-align:middle;">∑</td>
+<td style="color:black; background:transparent; font-weight: bold; text-align:right; vertical-align:middle;">420</td>
+<td style="color:black; background:transparent; font-weight: bold; text-align:right; vertical-align:middle;">605</td>
+<td style="color:black; background:transparent; font-weight: bold; text-align:right; vertical-align:middle;">0</td>
+<td style="color:black; background:transparent; font-weight: bold; text-align:right; vertical-align:middle;">1,025</td>
+</tr></tbody></table></div></section>
+
+<div class="textwrapper"><textarea placeholder="Write a comment..." oninput="this.innerHTML = this.value;pybridge._add_comment(this.parentNode.parentNode.id, this.value);">Part2 Q6, linear kernel model. 
+I think this model is not doing a good job. It misclassifies instances between Class 0 and Class 1 and did not capture Class 2, as the TP+TN and FP+FN are almost fifty-fifty in the matrix (accuracy =53.4%), while there is no TP for Class 2.</textarea></div></div><div id="5099102560" class="selected" onclick="pybridge._select_item(this.id)"><section class="section"><h1>Confusion Matrix <span class="timestamp">Thu Apr 04 24, 15:57:31</span></h1><div class="content">
+<h2>Confusion matrix for degree 2 kernel (showing number of instances)</h2><table>
+<tbody><tr><td style="color:black; background:transparent; text-align:left; vertical-align:middle;"></td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;"></td>
+<td style="color:black; background:transparent; text-align:center; vertical-align:middle;">Predicted</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;"></td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;"></td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;"></td>
+</tr><tr><td style="color:black; background:transparent; text-align:left; vertical-align:middle;"></td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;"></td>
+<td style="color:black; background:transparent; font-weight: bold; text-align:right; vertical-align:middle;">0</td>
+<td style="color:black; background:transparent; font-weight: bold; text-align:right; vertical-align:middle;">1</td>
+<td style="color:black; background:transparent; font-weight: bold; text-align:right; vertical-align:middle;">2</td>
+<td style="color:black; background:transparent; font-weight: bold; text-align:right; vertical-align:middle;">∑</td>
+</tr><tr><td style="color:black; background:transparent; text-align:center; vertical-align:bottom;">Actual</td>
+<td style="color:black; background:transparent; font-weight: bold; text-align:right; vertical-align:middle;">0</td>
+<td style="color:#000000; background:#d1d1f5; text-align:right; vertical-align:middle;">435</td>
+<td style="color:#000000; background:#f4cece; text-align:right; vertical-align:middle;">65</td>
+<td style="color:#000000; background:transparent; text-align:right; vertical-align:middle;">0</td>
+<td style="color:black; background:transparent; font-weight: bold; text-align:right; vertical-align:middle;">500</td>
+</tr><tr><td style="color:black; background:transparent; text-align:left; vertical-align:middle;"></td>
+<td style="color:black; background:transparent; font-weight: bold; text-align:right; vertical-align:middle;">1</td>
+<td style="color:#000000; background:#fae8e8; text-align:right; vertical-align:middle;">30</td>
+<td style="color:#000000; background:#cecef4; text-align:right; vertical-align:middle;">470</td>
+<td style="color:#000000; background:transparent; text-align:right; vertical-align:middle;">0</td>
+<td style="color:black; background:transparent; font-weight: bold; text-align:right; vertical-align:middle;">500</td>
+</tr><tr><td style="color:black; background:transparent; text-align:left; vertical-align:middle;"></td>
+<td style="color:black; background:transparent; font-weight: bold; text-align:right; vertical-align:middle;">2</td>
+<td style="color:#000000; background:#fbebeb; text-align:right; vertical-align:middle;">25</td>
+<td style="color:#000000; background:transparent; text-align:right; vertical-align:middle;">0</td>
+<td style="color:#000000; background:transparent; text-align:right; vertical-align:middle;">0</td>
+<td style="color:black; background:transparent; font-weight: bold; text-align:right; vertical-align:middle;">25</td>
+</tr><tr><td style="color:black; background:transparent; text-align:left; vertical-align:middle;"></td>
+<td style="color:black; background:transparent; font-weight: bold; text-align:right; vertical-align:middle;">∑</td>
+<td style="color:black; background:transparent; font-weight: bold; text-align:right; vertical-align:middle;">490</td>
+<td style="color:black; background:transparent; font-weight: bold; text-align:right; vertical-align:middle;">535</td>
+<td style="color:black; background:transparent; font-weight: bold; text-align:right; vertical-align:middle;">0</td>
+<td style="color:black; background:transparent; font-weight: bold; text-align:right; vertical-align:middle;">1,025</td>
+</tr></tbody></table></div></section>
+
+<div class="textwrapper"><textarea placeholder="Write a comment..." oninput="this.innerHTML = this.value;pybridge._add_comment(this.parentNode.parentNode.id, this.value);">Part2 Q7, degree 2 kernel.
+This model performs significantly better than the linear model. It classifies a higher number of TP+TN, especially in distinguishing between Class 0 and Class 1. Besides, the absence of TP of Class 2 might indicate that the model is focusing more on the other classes.</textarea></div></div></body></html>

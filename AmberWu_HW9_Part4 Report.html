@@ -1,0 +1,278 @@
+<!DOCTYPE html><html><head>
+    <meta charset="utf-8">
+    <title>Orange Report</title>
+
+    <style>
+    html, body, table {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 13px;
+        margin:0px;
+        padding:0;
+        border:0 none;
+    }
+
+    h1, h2 , h3, h4, h5 {
+       padding: 1px;
+       font-size:100%;
+    }
+
+    h1 {
+        color: white;
+        background-color: black;
+        padding: 4px;
+        margin-top: 12px;
+        margin-bottom: 6px;
+    }
+
+    h2 {
+        border-bottom: 1px solid black;
+        padding-left: 2px;
+    }
+
+    ul, table, p {
+        padding: 10px;
+    }
+
+    table {
+        margin-left: -6px;
+    }
+
+    span.timestamp {
+        position: absolute;
+        right: 40px;
+        color:#ddd;
+    }
+
+    div.selected, div.normal {
+        margin: 5px;
+    }
+
+    div.selected {
+        background: #ddd;
+    }
+    @media print{
+        div.selected {
+            background: inherit;
+        }
+        ::-webkit-input-placeholder {
+            color: transparent;
+        }
+    }
+
+    div.content {
+        margin-left: 15px;
+    }
+
+    th, td {
+        text-align: left;
+        padding: 2px 6px 2px 6px;
+    }
+
+    th {
+        font-weight: bold;
+    }
+
+    @media screen {
+        td, th {
+            white-space: nowrap;
+        }
+    }
+
+    .caption {
+        text-align: center;
+        font-size: 90%;
+    }
+
+    img {
+        display: block;
+        margin: auto;
+        max-height: 20cm;
+    }
+
+    span.legend-square {
+        width: 1em;
+        height: 1em;
+        margin-right: 6px;
+        display: inline-block;
+    }
+
+    span.legend-item {
+        margin-right: 24px;
+    }
+
+    textarea {
+        border: 1px solid silver;
+        font-style: italic;
+        width: 100%;
+        height: 4em;
+    }
+
+    .textwrapper {
+        padding: 15px;
+    }
+
+    div.normal textarea:invalid {
+        display: none;
+    }
+
+    div.selected textarea {
+        display: block;
+    }
+
+    @media print{
+        section.section, img {
+            page-break-inside: avoid;
+        }
+    }
+    </style>
+    <script>
+    function scrollToId(id) {
+        var sel_el = document.getElementById(id);
+        if (sel_el != undefined) {
+            sel_el.scrollIntoView();
+            return true;
+        }
+        return false;
+    };
+
+    function setSelectedId(id) {
+        var sel_el = document.getElementsByClassName('selected')[0];
+        if (sel_el != undefined && sel_el.id != id) {
+           sel_el.className = 'normal';
+        }
+        sel_el = document.getElementById(id);
+        if (sel_el != undefined) {
+            sel_el.className = 'selected';
+            return true;
+        }
+        return false;
+    };
+    </script>
+
+</head><body onload="(function (id) {     setSelectedId(id); scrollToId(id); }(&quot;5697404784&quot;));">
+
+ 
+
+<div id="5697358288" class="normal" onclick="pybridge._select_item(this.id)"><section class="section"><h1>Test and Score <span class="timestamp">Thu Apr 04 24, 17:52:12</span></h1><div class="content">
+<h2>Settings</h2><ul><b>Sampling type:</b> Stratified 10-fold Cross validation<br><b>Target class:</b> None, show average over classes<br></ul><h2>Scores</h2><table>
+<tbody><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Model</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">AUC</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">CA</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">F1</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Prec</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Recall</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Spec</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">LogLoss</th>
+</tr><tr><td style="color:black; background:transparent; text-align:left; vertical-align:middle;">Linear kernel SVM</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.676</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.534</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.522</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.520</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.534</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.556</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.715</td>
+</tr><tr><td style="color:black; background:transparent; text-align:left; vertical-align:middle;">degree 2 kernel</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.965</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.883</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.872</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.862</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.883</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.889</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.266</td>
+</tr></tbody></table></div></section>
+
+<div class="textwrapper"><textarea placeholder="Write a comment..." oninput="this.innerHTML = this.value;pybridge._add_comment(this.parentNode.parentNode.id, this.value);">Part4 Q14, average over classes
+
+Overall, the model performs well across all metrics. it's effective in capturing non-linear relationships in the data and making accurate predictions. </textarea></div></div><div id="5697319840" class="normal" onclick="pybridge._select_item(this.id)"><section class="section"><h1>Test and Score <span class="timestamp">Thu Apr 04 24, 17:52:47</span></h1><div class="content">
+<h2>Settings</h2><ul><b>Sampling type:</b> Stratified 10-fold Cross validation<br><b>Target class:</b> 0<br></ul><h2>Scores</h2><table>
+<tbody><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Model</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">AUC</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">CA</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">F1</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Prec</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Recall</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Spec</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">LogLoss</th>
+</tr><tr><td style="color:black; background:transparent; text-align:left; vertical-align:middle;">Linear kernel SVM</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.556</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.534</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.480</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.526</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.442</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.621</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.692</td>
+</tr><tr><td style="color:black; background:transparent; text-align:left; vertical-align:middle;">degree 2 kernel</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.961</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.883</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.879</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.888</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.870</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.895</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.262</td>
+</tr></tbody></table></div></section>
+
+<div class="textwrapper"><textarea placeholder="Write a comment..." oninput="this.innerHTML = this.value;pybridge._add_comment(this.parentNode.parentNode.id, this.value);">Part4 Q14, class 0
+
+Same as above.</textarea></div></div><div id="5697356560" class="normal" onclick="pybridge._select_item(this.id)"><section class="section"><h1>Test and Score <span class="timestamp">Thu Apr 04 24, 17:53:10</span></h1><div class="content">
+<h2>Settings</h2><ul><b>Sampling type:</b> Stratified 10-fold Cross validation<br><b>Target class:</b> 1<br></ul><h2>Scores</h2><table>
+<tbody><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Model</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">AUC</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">CA</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">F1</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Prec</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Recall</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Spec</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">LogLoss</th>
+</tr><tr><td style="color:black; background:transparent; text-align:left; vertical-align:middle;">Linear kernel SVM</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.801</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.558</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.590</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.539</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.652</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.469</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.634</td>
+</tr><tr><td style="color:black; background:transparent; text-align:left; vertical-align:middle;">degree 2 kernel</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.969</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.907</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.908</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.879</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.940</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.876</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.233</td>
+</tr></tbody></table></div></section>
+
+<div class="textwrapper"><textarea placeholder="Write a comment..." oninput="this.innerHTML = this.value;pybridge._add_comment(this.parentNode.parentNode.id, this.value);">Part4 Q14, class 1
+
+Better than the average and class 0.</textarea></div></div><div id="5697404784" class="selected" onclick="pybridge._select_item(this.id)"><section class="section"><h1>Test and Score <span class="timestamp">Thu Apr 04 24, 17:53:20</span></h1><div class="content">
+<h2>Settings</h2><ul><b>Sampling type:</b> Stratified 10-fold Cross validation<br><b>Target class:</b> 2<br></ul><h2>Scores</h2><table>
+<tbody><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Model</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">AUC</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">CA</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">F1</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Prec</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Recall</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Spec</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">LogLoss</th>
+</tr><tr><td style="color:black; background:transparent; text-align:left; vertical-align:middle;">Linear kernel SVM</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.970</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.976</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.000</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.000</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.000</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">1.000</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.073</td>
+</tr><tr><td style="color:black; background:transparent; text-align:left; vertical-align:middle;">degree 2 kernel</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.996</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.976</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.000</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.000</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.000</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">1.000</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">0.033</td>
+</tr></tbody></table></div></section>
+
+<div class="textwrapper"><textarea placeholder="Write a comment..." oninput="this.innerHTML = this.value;pybridge._add_comment(this.parentNode.parentNode.id, this.value);">Part4 Q14, class 2
+
+The metrics are to the extremes individually. AUC, CA and Specificity are very high, while F1,Precesion and recall are all 0. This indicates that no TP is captured by this model.
+
+The average can not represent the performance of each class, as its overall metrics are only similar to class0 and 1, while being completely unrepresentative to class 2. The dataset is highly imbalanced, with class 0 and 1 dominanting and the model always predicting those 2 classes. Class 2 is ignored by the algorithm.</textarea></div></div></body></html>
